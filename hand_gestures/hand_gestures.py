@@ -8,7 +8,7 @@ import mediapipe as mp
 import numpy as np
 
 # Landmark numbers:
-# https://camo.githubusercontent.com/385c0bf768a8afc7aaa4ad5413a70284db1b0d14317b234b7ae69a105032ac01/68747470733a2f2f6d65646961706970652e6465762f696d616765732f6d6f62696c652f68616e645f6c616e646d61726b732e706e67
+# https://mediapipe.dev/images/mobile/hand_landmarks.png
 
 
 class Condition:
