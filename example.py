@@ -1,16 +1,4 @@
-# HandGestures
-
-Python library that makes it easy to create and detect custom gestures using mediapipe.
-
-## Example Image
-
-![floating mouse demo](assets/floating_mouse.png)
-(the image is using the 'floating_mouse.py' example with the debug option '_blank_frame=True')
-
-## Example Code
-
-```python
-from hand_gestures import Condition, GestureBuilder, GestureHandler
+from hand_gestures.hand_gestures import Condition, GestureBuilder, GestureHandler
 
 
 class Gestures:
@@ -64,4 +52,3 @@ two_up = GestureBuilder(
 )
 
 handler.init([fist, ok, grab, pinch, two_up], main_callback_func)
-```
