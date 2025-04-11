@@ -11,6 +11,7 @@ Python library that makes it easy to create and detect custom gestures using med
 ## Example Code
 
 ```python
+# Import the needed classes
 from hand_gestures import Condition, GestureBuilder, GestureHandler
 
 # First define a list of gestures
@@ -35,11 +36,14 @@ def callback_func(callback_dict):
 
 # This callback will be used as the main callback and it is called on every frame
 def main_callback_func(hand, detected_gestures, hand_scale, hand_positions):
+    # Using 'detected_gestures' you can set which gesture is being detected
+    # (this may look redundant but it is needed as sometimes multiple gestures are detected at once)
     if not detected_gestures:
         handler.set_gesture(hand, Gestures.NONE)
         return
 
     if Gestures.OK in detected_gestures:
+        # Here, FIST takes priority over OK (if both are present)
         if Gestures.FIST in detected_gestures:
             handler.set_gesture(hand, Gestures.FIST)
         else:
@@ -77,6 +81,6 @@ two_up = GestureBuilder(
     [Condition(4, [16, 20], 0.1), Condition(8, 12, 0.05, invert_check=True)],
 )
 
-# Finally start the running loop with all of your gestures (blocking)
+# Finally, start the running loop with all of your gestures (blocking)
 handler.init([fist, ok, grab, pinch, two_up], main_callback_func)
 ```
