@@ -5,6 +5,7 @@ Python library that makes it easy to create and detect custom gestures using med
 ## Example Image
 
 ![floating mouse demo](assets/floating_mouse.png)
+
 (the image is using the 'floating_mouse.py' example with the debug option '_blank_frame=True')
 
 ## Example Code
